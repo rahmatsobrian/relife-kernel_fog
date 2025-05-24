@@ -13,6 +13,9 @@ CONFIG_EROFS_FS_POSIX_ACL=y
 CONFIG_EROFS_FS_SECURITY=y
 CONFIG_EROFS_FS_ZIP=y
 # ====================================
+# Fast Charging ( Do With Your Own Risk!! )
+CONFIG_SMB1351_FAST_CHG_AMP=n
+# ====================================
 # BORE scheduler
 CONFIG_SCHED_BORE=n
 # ====================================
