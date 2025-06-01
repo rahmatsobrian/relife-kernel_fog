@@ -24,13 +24,13 @@ echo -e "\nStarting compilation...\n"
 mkdir -p out
 make O=out ARCH=arm64 $DEFCONFIG
 
-make -j$(nproc --all) O=out ARCH=arm64 LLVM=1 LLVM_IAS=1 Image.gz dtb.img dtbo.img
+make -j$(nproc --all) O=out ARCH=arm64 LLVM=1 LLVM_IAS=1 Image.gz dtb.img dtbo.img 2> >(tee log.txt >&2)
 
 if [ -f "$kernel" ]; then
 	echo -e "\nKernel compiled successfully!"
-	echo -e "Image: $kernel"
-	echo -e "DTB: $dtb"
-	echo -e "DTBO: $dtbo"
+	echo -e "Kernel Image: $kernel"
+	echo -e "Dtb Image: $dtb"
+	echo -e "Dtbo Image: $dtbo"
 	echo -e "Completed in $((SECONDS / 60)) minute(s) and $((SECONDS % 60)) second(s)"
 else
 	echo -e "\nCompilation failed!"
