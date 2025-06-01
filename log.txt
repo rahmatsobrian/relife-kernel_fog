@@ -1,0 +1,96 @@
+../techpack/camera/drivers/cam_isp/isp_hw_mgr/isp_hw/tfe_hw/cam_tfe_core.c:2070:54: warning: overlapping comparisons always evaluate to true [-Wtautological-overlap-compare]
+ 2070 |         } else if (in_res->res_id >= CAM_ISP_HW_TFE_IN_RDI0 ||
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+ 2071 |                 in_res->res_id <= CAM_ISP_HW_TFE_IN_RDI2) {
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+../fs/proc/task_mmu.c:392:24: warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  392 |         struct dentry *dentry = file->f_path.dentry;
+      |                        ^
+1 warning generated.
+../techpack/audio/dsp/q6afe.c:8982:28: warning: comparison of array 'clkinfo_per_port[idx].clk_src_name' equal to a null pointer is always false [-Wtautological-pointer-compare]
+ 8982 |         if (clkinfo_per_port[idx].clk_src_name == NULL)
+      |             ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~    ~~~~
+../techpack/audio/dsp/q6afe.c:9303:6: warning: comparison of array 'clk_src_name' not equal to a null pointer is always true [-Wtautological-pointer-compare]
+ 9303 |         if (clk_src_name != NULL) {
+      |             ^~~~~~~~~~~~    ~~~~
+2 warnings generated.
+../techpack/audio/asoc/msm-pcm-routing-v2.c:1272:6: warning: comparison of array 'cal_data' equal to a null pointer is always false [-Wtautological-pointer-compare]
+ 1272 |         if (cal_data == NULL)
+      |             ^~~~~~~~    ~~~~
+1 warning generated.
+../techpack/display/msm/sde/sde_kms.c:1170:54: warning: result of comparison of constant 0 with expression of type 'bool' (aka '_Bool') is always false [-Wtautological-constant-compare]
+ 1170 |         if (sde_kms_power_resource_is_enabled(sde_kms->dev) < 0) {
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~
+1 warning generated.
+../techpack/display/msm/sde/sde_hw_reg_dma_v1_color_proc.c:371:14: warning: comparison of array 'hw_cfg->dspp' equal to a null pointer is always false [-Wtautological-pointer-compare]
+  371 |         if (hw_cfg->dspp == NULL) {
+      |             ~~~~~~~~^~~~    ~~~~
+1 warning generated.
+../fs/exec.c:2070:3: warning: add explicit braces to avoid dangling else [-Wdangling-else]
+ 2070 |                 else
+      |                 ^
+1 warning generated.
+../net/core/net_namespace.c:983:13: warning: unused function 'free_exit_list' [-Wunused-function]
+  983 | static void free_exit_list(struct pernet_operations *ops, struct list_head *net_exit_list)
+      |             ^~~~~~~~~~~~~~
+1 warning generated.
+../drivers/devfreq/governor_msm_adreno_tz.c:424:16: warning: unused variable 'refresh_rate' [-Wunused-variable]
+  424 |                 unsigned int refresh_rate = dsi_panel_get_refresh_rate();
+      |                              ^~~~~~~~~~~~
+1 warning generated.
+../techpack/display/msm/sde/sde_hw_reg_dma_v1.c:494:28: warning: overlapping comparisons always evaluate to false [-Wtautological-overlap-compare]
+  494 |         if (cfg->ctl->idx < CTL_0 && cfg->ctl->idx >= CTL_MAX) {
+      |             ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+../kernel/profile.c:346:6: warning: comparison of array 'prof_cpu_mask' not equal to a null pointer is always true [-Wtautological-pointer-compare]
+  346 |         if (prof_cpu_mask != NULL)
+      |             ^~~~~~~~~~~~~    ~~~~
+../kernel/profile.c:383:6: warning: comparison of array 'prof_cpu_mask' not equal to a null pointer is always true [-Wtautological-pointer-compare]
+  383 |         if (prof_cpu_mask != NULL)
+      |             ^~~~~~~~~~~~~    ~~~~
+../kernel/profile.c:413:26: warning: comparison of array 'prof_cpu_mask' not equal to a null pointer is always true [-Wtautological-pointer-compare]
+  413 |         if (!user_mode(regs) && prof_cpu_mask != NULL &&
+      |                                 ^~~~~~~~~~~~~    ~~~~
+3 warnings generated.
+../techpack/display/msm/dsi/dsi_panel.c:348:1: warning: unused label 'error_release_reset' [-Wunused-label]
+  348 | error_release_reset:
+      | ^~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+../drivers/input/touchscreen/ft8006s_spi/focaltech_core.c:74:13: warning: unused variable 'g_regulator_status' [-Wunused-variable]
+   74 | static bool g_regulator_status;
+      |             ^~~~~~~~~~~~~~~~~~
+1 warning generated.
+../drivers/md/dm-verity-target.c:967:15: warning: unused variable 'wq_flags' [-Wunused-variable]
+  967 |         unsigned int wq_flags;
+      |                      ^~~~~~~~
+1 warning generated.
+../drivers/platform/msm/ipa/ipa_v3/ipa.c:352:44: warning: comparison of array 'ipa3_ctx->ipa3_active_clients_logging.log_buffer' equal to a null pointer is always false [-Wtautological-pointer-compare]
+  352 |         if (ipa3_ctx->ipa3_active_clients_logging.log_buffer == NULL) {
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~    ~~~~
+1 warning generated.
+../drivers/usb/typec/wusb3801x/wusb3801x.c:2749:19: warning: comparison of address of 'client->dev.of_node' not equal to a null pointer is always true [-Wtautological-pointer-compare]
+ 2749 |         if (&client->dev.of_node != NULL){
+      |              ~~~~~~~~~~~~^~~~~~~    ~~~~
+../drivers/usb/typec/wusb3801x/wusb3801x.c:2973:19: warning: comparison of address of 'client->dev.of_node' not equal to a null pointer is always true [-Wtautological-pointer-compare]
+ 2973 |         if (&client->dev.of_node != NULL)
+      |              ~~~~~~~~~~~~^~~~~~~    ~~~~
+../drivers/usb/typec/wusb3801x/wusb3801x.c:3020:19: warning: comparison of address of 'client->dev.of_node' not equal to a null pointer is always true [-Wtautological-pointer-compare]
+ 3020 |         if (&client->dev.of_node != NULL)
+      |              ~~~~~~~~~~~~^~~~~~~    ~~~~
+3 warnings generated.
+../drivers/usb/typec/mux.c:192:6: warning: unused variable 'ret' [-Wunused-variable]
+  192 |         int ret;
+      |             ^~~
+1 warning generated.
+../drivers/usb/gadget/function/f_qdss.c:1024:52: warning: overlapping comparisons always evaluate to true [-Wtautological-overlap-compare]
+ 1024 |         if (kstrtou8(page, 0, &stats) != 0 && (stats != 0 || stats != 1)) {
+      |                                                ~~~~~~~~~~~^~~~~~~~~~~~~
+1 warning generated.
+../drivers/staging/qcacld-3.0/core/mac/src/sys/legacy/src/utils/src/parser_api.c:5772:14: warning: argument 'mdie' of type 'uint8_t[3]' (aka 'unsigned char[3]') with mismatched bound [-Warray-parameter]
+ 5772 |                    uint8_t mdie[SIR_MDIE_SIZE])
+      |                            ^
+../drivers/staging/qcacld-3.0/core/mac/src/include/parser_api.h:1025:14: note: previously declared as 'uint8_t[]' (aka 'unsigned char[]') here
+ 1025 |                    uint8_t mdie[]);
+      |                            ^
+1 warning generated.
