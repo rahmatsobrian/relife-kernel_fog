@@ -1,0 +1,182 @@
+#include "khaje-idp.dtsi"
+
+/*&dsi_td4330_truly_v2_video {
+	/delete-property/ qcom,esd-check-enabled;
+};
+
+&dsi_td4330_truly_v2_cmd {
+	/delete-property/ qcom,esd-check-enabled;
+};
+
+&dsi_nt36672e_fhd_plus_90hz_video {
+	/delete-property/ qcom,esd-check-enabled;
+}; */
+
+&qupv3_se2_i2c {
+	synaptics_tcm@20 {
+		status = "disabled";
+	};
+
+	novatek@62 {
+		status = "disabled";
+	};
+	smbusb: smb1351-charger@55 {
+				compatible = "qcom,smb1351-charger";
+				reg = <0x55>;
+				interrupt-parent = <&tlmm>;
+				interrupts = <0x54 0x02>;
+				pinctrl-names = "default";
+				pinctrl-0 = <&smb1351_int_default>;
+				intr-gpio = <&tlmm 84 2>;
+				dpdm-supply = <&usb2_phy0>;
+				qcom,iterm-ma = <0xc8>;
+				qcom,float-voltage-mv = <0x116c>;
+				qcom,recharge-mv = <0x64>;
+				qcom,bms-psy-name = "bms";
+				regulator-name = "smb1351_otg_vreg";
+				qcom,using-pmic-therm;
+				qcom,batt-hot-decidegc = <0x226>;
+				qcom,batt-cold-decidegc = <0x00>;
+				qcom,batt-missing-decidegc = <0xffffff38>;
+				qcom,batt-warm-decidegc = <0x1f4>;
+				qcom,batt-cool-decidegc = <0x32>;
+				qcom,batt-warm-ma = <0x15e>;
+				qcom,batt-cool-ma = <0x15e>;
+				qcom,batt-warm-mv = <0x1068>;
+				qcom,batt-cool-mv = <0x1068>;
+				enable_sw_jeita;
+				normal-charge-voltage = <0x116c>;
+				jeita_temp_above_t4_cv = <0x1004>;
+				jeita_temp_t3_to_t4_cv = <0x1004>;
+				jeita_temp_t2_to_t3_cv = <0x116c>;
+				jeita_temp_t1p5_to_t2_cv = <0x116c>;
+				jeita_temp_t1_to_t1p5_cv = <0x116c>;
+				jeita_temp_t0_to_t1_cv = <0x116c>;
+				jeita_temp_tn1_to_t0_cv = <0x116c>;
+				jeita_temp_below_t0_cv = <0x116c>;
+				temp_t4_thres = <0x3c>;
+				temp_t4_thres_minus_x_degree = <0x3a>;
+				temp_t3_thres = <0x2d>;
+				temp_t3_thres_minus_x_degree = <0x2b>;
+				temp_t2_thres = <0x0f>;
+				temp_t2_thres_plus_x_degree = <0x10>;
+				temp_t1p5_thres = <0x0a>;
+				temp_t1p5_thres_plus_x_degree = <0x0b>;
+				temp_t1_thres = <0x05>;
+				temp_t1_thres_plus_x_degree = <0x06>;
+				temp_t0_thres = <0x00>;
+				temp_t0_thres_plus_x_degree = <0x00>;
+				temp_tn1_thres = <0xfffffff6>;
+				temp_tn1_thres_plus_x_degree = <0xfffffff7>;
+				temp_neg_10_thres = <0xfffffff6>;
+				temp_t3_to_t4_fcc = <0x9c4>;
+				temp_t2_to_t3_fcc = <0xd48>;
+				temp_t1p5_to_t2_fcc = <0xbb8>;
+				temp_t1_to_t1p5_fcc = <0x5dc>;
+			temp_t0_to_t1_fcc = <0x1f4>;
+			temp_tn1_to_t0_fcc = <0x00>;
+			nopmi,thermal-mitigation = <0x33e140 0x33e140 0x2dc6c0 0x2ab980 0x27ac40 0x2191c0 0x1e8480 0x1b7740 0x186a00 0x155cc0 0x124f80 0xf4240 0xf4240 0xaae60 0x7a120 0x493e0>;
+
+				batt-NVT-5000mAh {
+					batt_id = <0x01>;
+					temp_t3_to_t4_fcc = <0x960>;
+					temp_t2_to_t3_fcc = <0xd48>;
+					temp_t1p5_to_t2_fcc = <0xd48>;
+					temp_t1_to_t1p5_fcc = <0x578>;
+					temp_t0_to_t1_fcc = <0x1f4>;
+					temp_tn1_to_t0_fcc = <0x00>;
+				};
+
+				batt-GUANYU-6000mAh {
+					batt_id = <0x02>;
+					temp_t3_to_t4_fcc = <0xbb8>;
+					temp_t2_to_t3_fcc = <0xd48>;
+					temp_t1p5_to_t2_fcc = <0xbb8>;
+					temp_t1_to_t1p5_fcc = <0x640>;
+					temp_t0_to_t1_fcc = <0x258>;
+					temp_tn1_to_t0_fcc = <0x00>;
+				};
+
+				batt-Sunwoda-5000mAh {
+					batt_id = <0x03>;
+					temp_t3_to_t4_fcc = <0x960>;
+					temp_t2_to_t3_fcc = <0xd48>;
+					temp_t1p5_to_t2_fcc = <0xd48>;
+					temp_t1_to_t1p5_fcc = <0x578>;
+					temp_t0_to_t1_fcc = <0x1f4>;
+					temp_tn1_to_t0_fcc = <0x00>;
+				};
+
+				batt-Sunwoda-6000mAh {
+					batt_id = <0x04>;
+					temp_t3_to_t4_fcc = <0xbb8>;
+					temp_t2_to_t3_fcc = <0xd48>;
+					temp_t1p5_to_t2_fcc = <0xbb8>;
+					temp_t1_to_t1p5_fcc = <0x640>;
+					temp_t0_to_t1_fcc = <0x258>;
+					temp_tn1_to_t0_fcc = <0x00>;
+				};
+			};
+			
+			wusb3801@60 {
+				compatible = "WillSemi,wusb3801";
+				reg = <0x60>;
+				qcom,irq-gpio = <&tlmm 93 32776>;
+				interrupt-parent = <&tlmm>;
+				interrupts = <0x5d 0x00>;
+				interrupt-names = "wusb3801_int_irq";
+				wusb3801,irq-gpio = <&tlmm 93 32776>;
+				wusb3801,reset-gpio = <&tlmm 93 0>;
+				pinctrl-names = "pmx_wusb3801_active", "pmx_wusb3801_suspend";
+				pinctrl-0 = <&wusb3801_active>;
+				pinctrl-1 = <&wusb3801_suspend>;
+				wusb3801,init-mode = <0x24>;
+				wusb3801,host-current = <0x01>;
+				wusb3801,drp-toggle-time = <0x28>;
+			};
+
+			fusb303@21 {
+				compatible = "on,fusb303";
+				reg = <0x21>;
+				interrupt-parent = <&tlmm>;
+				interrupts = <0x5d 0x00>;
+				fusb303,int-gpio = <&tlmm 93 32776>;
+				pinctrl-names = "pmx_fusb303_active", "pmx_fusb303_suspend";
+				pinctrl-0 = <&fusb303_active>;
+				pinctrl-1 = <&fusb303_suspend>;
+				fusb303,init-mode = <0x04>;
+				fusb303,host-current = <0x02>;
+				fusb303,drp-toggle-time = <0x01>;
+				fusb303,drp-duty-time = <0x00>;
+				fusb303,autosink-threshold = <0x01>;
+				fusb303,cc-debounce-time = <0x03>;
+			};			
+};
+
+&usb0 {
+	extcon = <&smbusb &eud>;
+	dwc3@4e00000 {
+				dr_mode = "otg";
+			};
+};
+
+&tlmm {
+			smb1351_int_default: smb1351_int_default {
+
+				mux {
+					pins = "gpio84";
+					function = "gpio";
+				};
+
+				config {
+					pins = "gpio84";
+					drive-strength = <0x02>;
+					bias-pull-up;
+					input-enable;
+				};
+			};
+};
+
+&sdhc_2 {
+	cd-gpios = <&tlmm 88 0>;
+};

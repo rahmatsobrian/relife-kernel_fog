@@ -1,0 +1,94 @@
+&mdss_mdp {
+dsi_panel_c3q_43_03_0b_fhdp_video:
+qcom,mdss_dsi_panel_c3q_43_03_0b_fhdp_video {
+				qcom,mdss-dsi-panel-name = "ft8006s video mode dsi xinli panel";
+				qcom,mdss-dsi-panel-type = "dsi_video_mode";
+				qcom,dsi-ctrl-num = <0x00>;
+				qcom,dsi-phy-num = <0x00>;
+				qcom,mdss-dsi-virtual-channel-id = <0x00>;
+				qcom,mdss-dsi-stream = <0x00>;
+				qcom,mdss-dsi-h-left-border = <0x00>;
+				qcom,mdss-dsi-h-right-border = <0x00>;
+				qcom,mdss-dsi-v-top-border = <0x00>;
+				qcom,mdss-dsi-v-bottom-border = <0x00>;
+				qcom,mdss-dsi-bpp = <0x18>;
+				qcom,mdss-dsi-color-order = "rgb_swap_rgb";
+				qcom,mdss-dsi-underflow-color = <0xff>;
+				qcom,mdss-dsi-border-color = <0x00>;
+				qcom,mdss-dsi-h-sync-pulse = <0x00>;
+				qcom,mdss-dsi-traffic-mode = "non_burst_sync_event";
+				qcom,mdss-dsi-lane-map = "lane_map_0123";
+				qcom,mdss-dsi-bllp-eof-power-mode;
+				qcom,mdss-dsi-bllp-power-mode;
+				qcom,mdss-dsi-tx-eot-append;
+				qcom,mdss-dsi-lane-0-state;
+				qcom,mdss-dsi-lane-1-state;
+				qcom,mdss-dsi-lane-2-state;
+				qcom,mdss-dsi-lane-3-state;
+				qcom,mdss-dsi-dma-trigger = "trigger_sw";
+				qcom,mdss-dsi-mdp-trigger = "none";
+				qcom,mdss-dsi-lp11-init;
+				qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
+				qcom,mdss-dsi-bl-min-level = <0x01>;
+				qcom,mdss-dsi-bl-max-level = <0x7ff>;
+				qcom,mdss-brightness-max-level = <0x7ff>;
+				qcom,mdss-dsi-bl-inverted-dbv;
+				qcom,mdss-dsi-bl-move-high-8b;
+				qcom,mdss-dsi-focaltech-reset-sequence;
+				qcom,mdss-dsi-reset-sequence = <0x01 0x05 0x00 0x05 0x01 0x23>;
+				qcom,dispparam-enabled;
+				qcom,mdss-pan-physical-width-dimension = <0x44>;
+				qcom,mdss-pan-physical-height-dimension = <0x9c>;
+				qcom,esd-check-enabled;
+				qcom,mdss-dsi-panel-status-check-mode = "reg_read";
+				qcom,mdss-dsi-panel-status-command = <0x6010001 0x10a>;
+				qcom,mdss-dsi-panel-status-command-state = "dsi_hs_mode";
+				qcom,mdss-dsi-panel-status-value = <0x9c>;
+				qcom,mdss-dsi-panel-on-check-value = <0x9c>;
+				qcom,mdss-dsi-panel-status-read-length = <0x01>;
+				qcom,dsi-select-clocks = "mux_byte_clk0", "mux_pixel_clk0", "src_byte_clk0", "src_pixel_clk0", "shadow_byte_clk0", "shadow_pixel_clk0";
+				qcom,panel-supply-entries = <&dsi_panel_pwr_supply_no_labibb>;
+				pwms = <&pm6125_pwm 0 0>;
+				qcom,bl-pmic-pwm-period-usecs = <0x64>;
+				qcom,lcm-enp-gpio = <&tlmm 98 0>;
+				qcom,lcm-enn-gpio = <&tlmm 101 0>;
+				qcom,platform-te-gpio = <&tlmm 81 0>;
+				qcom,platform-reset-gpio = <&tlmm 82 0>;
+
+				qcom,mdss-dsi-display-timings {
+
+					timing@0 {
+						qcom,mdss-dsi-panel-width = <0x2d0>;
+						qcom,mdss-dsi-panel-height = <0x672>;
+						qcom,mdss-dsi-h-pulse-width = <0x10>;
+						qcom,mdss-dsi-h-back-porch = <0x19>;
+						qcom,mdss-dsi-h-front-porch = <0x1a>;
+						qcom,mdss-dsi-h-sync-skew = <0x00>;
+						qcom,mdss-dsi-v-pulse-width = <0x0a>;
+						qcom,mdss-dsi-v-back-porch = <0x6e>;
+						qcom,mdss-dsi-v-front-porch = <0x87>;
+						qcom,mdss-dsi-panel-framerate = <0x3c>;
+						qcom,mdss-dsi-on-command = [39 01 00 00 00 00 03 41 5a 19 39 01 00 00 00 00 11 80 e3 d4 c4 b6 ac a3 9c 96 90 8c 88 83 44 74 fb 9f 39 01 00 00 00 00 08 90 f9 0f fe ef 9f af 0f 39 01 00 00 00 00 05 a0 00 00 46 00 05 01 00 00 78 00 01 11 05 01 00 00 00 00 01 29 39 01 00 00 00 00 02 53 2c 39 01 00 00 0a 00 02 55 00];
+						qcom,mdss-dsi-dispparam-cabc-ui-on-command = [39 01 00 00 00 00 02 55 01];
+						qcom,mdss-dsi-dispparam-cabc-still-on-command = [39 01 00 00 00 00 02 55 02];
+						qcom,mdss-dsi-dispparam-cabc-movice-on-command = [39 01 00 00 00 00 02 55 03];
+						qcom,mdss-dsi-dispparam-cabc-off-command = [39 01 00 00 00 00 02 55 00];
+						qcom,mdss-dsi-off-command = <0x15010000 0x14000228 0x150100 0x960002 0x10001501 0x00 0x2175a15 0x1000032 0x2185a>;
+						qcom,mdss-dsi-dispparam-hbm-on-command = [39 01 00 00 00 00 03 51 ff 0e];
+						qcom,mdss-dsi-dispparam-hbm-off-command = [39 01 00 00 00 00 03 51 cc 0a];
+						qcom,mdss-dsi-dispparam-cabc-ui-on-command-status = "dsi_lp_mode";
+						qcom,mdss-dsi-dispparam-cabc-still-on-command-status = "dsi_lp_mode";
+						qcom,mdss-dsi-dispparam-cabc-movice-on-command-status = "dsi_lp_mode";
+						qcom,mdss-dsi-dispparam-cabc-off-command-status = "dsi_lp_mode";
+						qcom,mdss-dsi-on-command-state = "dsi_lp_mode";
+						qcom,mdss-dsi-off-command-state = "dsi_lp_mode";
+						qcom,mdss-dsi-dispparam-hbm-on-command-state = "dsi_lp_mode";
+						qcom,mdss-dsi-dispparam-hbm-off-command-state = "dsi_lp_mode";
+						qcom,mdss-dsi-panel-phy-timings = [00 13 05 04 13 1e 05 05 06 02 04 00 12 0a];
+						qcom,display-topology = <0x01 0x00 0x01>;
+						qcom,default-topology-index = <0x00>;
+					};
+				};
+			};
+};
+

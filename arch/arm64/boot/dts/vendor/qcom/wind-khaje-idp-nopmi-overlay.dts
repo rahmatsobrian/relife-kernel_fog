@@ -1,0 +1,13 @@
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/interrupt-controller/arm-gic.h>
+#include "wind.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. WIND KHAJE IDP nopmi";
+        compatible = "qcom,khaje-idp", "qcom,khaje", "qcom,idp";
+        qcom,msm-id = <0x206 0x10000>;
+        qcom,board-id = <0x50022 0x00>;
+        qcom,pmic-id = <0x2d 0x00 0x00 0x00>;
+};
